@@ -1,0 +1,24 @@
+model_list:
+  - model_name: claude-sonnet
+    litellm_params:
+      model: bedrock/invoke/us.anthropic.claude-sonnet-4-20250514-v1:0
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION
+  - model_name: claude-haiku
+    litellm_params:
+      model: bedrock/invoke/us.anthropic.claude-haiku-4-5-20251001-v1:0
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION
+  - model_name: claude-opus
+    litellm_params:
+      model: bedrock/invoke/us.anthropic.claude-opus-4-6
+      aws_access_key_id: os.environ/AWS_ACCESS_KEY_ID
+      aws_secret_access_key: os.environ/AWS_SECRET_ACCESS_KEY
+      aws_region_name: os.environ/AWS_REGION
+litellm_settings:
+  callbacks: ["hooks.proxy_handler_instance"]
+  set_verbose: true
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
